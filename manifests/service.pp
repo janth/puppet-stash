@@ -10,6 +10,7 @@ class stash::service  (
   $service_file_location = $stash::params::service_file_location,
   $service_file_template = $stash::params::service_file_template,
   $service_lockfile      = $stash::params::service_lockfile,
+  $product               = $stash::product,
 
 ) {
 
