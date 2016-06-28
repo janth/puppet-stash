@@ -4,6 +4,9 @@
 # /bitbucket/home.  You can of course set it outside in the command terminal; that will also work.
 #
 
+STASH_HOME="<%= scope.lookupvar('stash::homedir') %>"
+JAVA_HOME=<%= scope.lookupvar('stash::javahome') %>
+
 if [ "x${BITBUCKET_HOME}" = "x" ]; then
     export BITBUCKET_HOME=
 fi
