@@ -70,6 +70,9 @@ class stash::config(
     value   => $tomcat_port,
     require => Class['stash::install'],
     before  => Class['stash::service'],
+  }
+
+  /* TODO FIXME
   } ->
 
   file { "${stash::homedir}/${moved}stash-config.properties":
@@ -81,4 +84,5 @@ class stash::config(
       File[$stash::homedir]
     ],
   }
+  */
 }
