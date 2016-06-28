@@ -13,20 +13,20 @@ class stash::params {
         # /etc/systemd/system/: units installed by the system administrator
         $service_file_location   = "/usr/lib/systemd/system/$product.service"
         $service_file_template   = 'stash/stash.service.erb'
-        $service_lockfile        = '/var/lock/subsys/stash'
+        $service_lockfile        = "/var/lock/subsys/$product"
       } elsif $::operatingsystemmajrelease == '6' {
         $json_packages           = [ 'rubygem-json', 'ruby-json' ]
-        $service_file_location   = '/etc/init.d/stash'
+        $service_file_location   = "/etc/init.d/$product"
         $service_file_template   = 'stash/stash.initscript.redhat.erb'
-        $service_lockfile        = '/var/lock/subsys/stash'
+        $service_lockfile        = "/var/lock/subsys/$product"
       } else {
         fail("${::operatingsystem} ${::operatingsystemmajrelease} not supported")
       }
     } /Debian/: {
       $json_packages           = [ 'rubygem-json', 'ruby-json' ]
-      $service_file_location   = '/etc/init.d/stash'
+      $service_file_location   = "/etc/init.d/$product"
       $service_file_template   = 'stash/stash.initscript.debian.erb'
-      $service_lockfile        = '/var/lock/stash'
+      $service_lockfile        = "/var/lock/$product"
     } default: {
       fail("${::operatingsystem} ${::operatingsystemmajrelease} not supported")
     }

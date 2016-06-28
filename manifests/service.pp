@@ -30,11 +30,11 @@ class stash::service  (
         command     => 'systemctl daemon-reload',
         refreshonly => true,
         subscribe   => File[$service_file_location],
-        before      => Service['stash'],
+        before      => Service[$product],
       }
     }
 
-    service { 'stash':
+    service { $product:
       ensure  => $service_ensure,
       enable  => $service_enable,
       require => File[$service_file_location],
