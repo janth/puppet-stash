@@ -51,9 +51,9 @@ class stash(
 
   # Backup Settings
   $backup_ensure          = 'present',
-  $backupclient_url       = 'https://maven.atlassian.com/public/com/atlassian/stash/backup/stash-backup-distribution',
+  $backupclient_url       = 'https://maven.atlassian.com/content/repositories/atlassian-public/com/atlassian/stash/backup/stash-backup-distribution/',
   $backupclient_version   = '1.9.1',
-  $backup_home            = '/opt/stash-backup',
+  $backup_home            = "/opt/$product-backup",
   $backupuser             = 'admin',
   $backuppass             = 'password',
   $backup_schedule_hour   = '5',

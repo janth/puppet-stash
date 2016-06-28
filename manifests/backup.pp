@@ -36,6 +36,8 @@ class stash::backup(
   }
 
   $file = "stash-backup-distribution-${version}.${format}"
+  # stash is hard-coded in all of here, do not change to $product
+  # https://maven.atlassian.com/content/repositories/atlassian-public/com/atlassian/stash/backup/stash-backup-distribution/1.9.1/stash-backup-distribution-1.9.1.tar.gz
 
   file { $appdir:
     ensure => 'directory',
