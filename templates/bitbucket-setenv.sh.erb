@@ -313,3 +313,5 @@ if [ -z "$CATALINA_PID" ] ; then
     fi
 fi
 export CATALINA_PID
+
+env | sort | grep -E "^(JAVA|CATALINA)" > /tmp/tomcat.env
