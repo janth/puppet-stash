@@ -7,7 +7,11 @@ class stash::params {
     /RedHat/: {
       if $::operatingsystemmajrelease == '7' {
         $json_packages           = 'rubygem-json'
-        $service_file_location   = '/usr/lib/systemd/system/stash.service'
+        # /etc/systemd/system because https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/sect-Managing_Services_with_systemd-Unit_Files.html
+        # https://wiki.archlinux.org/index.php/systemd#Writing_unit_files
+        # /usr/lib/systemd/system/: units provided by installed packages
+        # /etc/systemd/system/: units installed by the system administrator
+        $service_file_location   = "/usr/lib/systemd/system/$product.service"
         $service_file_template   = 'stash/stash.service.erb'
         $service_lockfile        = '/var/lock/subsys/stash'
       } elsif $::operatingsystemmajrelease == '6' {
