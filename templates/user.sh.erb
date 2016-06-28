@@ -1,8 +1,8 @@
 # This file managed by puppet: templates/user.sh.erb
 
 # START INSTALLER MAGIC ! DO NOT EDIT !
-<%= scope.lookupvar('stash::product') %>_USER="<%= scope.lookupvar('stash::user') %>" ## User created by puppet
+<%= scope.lookupvar('stash::product').upcase %>_USER="<%= scope.lookupvar('stash::user') %>" ## User created by puppet
 SHELL="/bin/bash"
 # END INSTALLER MAGIC ! DO NOT EDIT !
 
-export <%= scope.lookupvar('stash::product') %>_USER SHELL
+export <%= scope.lookupvar('stash::product').upcase %>_USER SHELL
