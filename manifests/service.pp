@@ -16,6 +16,7 @@ class stash::service  (
 
   validate_bool($service_manage)
 
+  notify { "JTM:: Deploying $service_file_location, from $service_file_template": }
   file { $service_file_location:
     content => template($service_file_template),
     mode    => '0755',
