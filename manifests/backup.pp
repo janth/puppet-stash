@@ -35,7 +35,7 @@ class stash::backup(
     group  => $group,
   }
 
-  $file = "${product}-backup-distribution-${version}.${format}"
+  $file = "stash-backup-distribution-${version}.${format}"
 
   file { $appdir:
     ensure => 'directory',
