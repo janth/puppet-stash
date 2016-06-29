@@ -14,13 +14,14 @@ class stash(
   $java_opts    = '',
 
   # Stash Settings
-  $version      = '3.7.0',
-  $product      = 'stash',
-  $format       = 'tar.gz',
-  $installdir   = '/opt/stash',
-  $homedir      = '/home/stash',
-  $context_path = '',
-  $tomcat_port  = 7990,
+  $version        = '3.7.0',
+  $product        = 'stash',
+  $format         = 'tar.gz',
+  $installdir     = '/opt/stash',
+  $homedir        = '/home/stash',
+  $context_path   = '',
+  $tomcat_port    = 7990,
+  $redirect_port  = 8443,
 
   # User and Group Management Settings
   $manage_usr_grp = true,

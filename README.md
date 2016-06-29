@@ -141,7 +141,8 @@ This is especially useful for setting properties such as HTTP/https proxy settin
       proxyName    => 'stash.example.co.za',
       proxyPort    => '443',
     },
-    tomcat_port    => '7991'
+    tomcat_port    => '7991',
+    redirect_port  => '443'
   }
   class { 'stash::facts': }
   class { 'stash::gc': }
@@ -225,6 +226,8 @@ Specify context path, defaults to ''.
 If modified, Once Stash has started, go to the administration area and click Server Settings (under 'Settings'). Append the new context path to your base URL.
 #####`tomcat_port`
 Specify the port that you wish to run tomcat under, defaults to 7990
+#####`redirect_port`
+FIXME: Specify the port that you wish to run tomcat under, defaults to 8443
 
 ####database parameters####
 
